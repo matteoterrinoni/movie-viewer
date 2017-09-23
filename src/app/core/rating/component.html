@@ -1,0 +1,7 @@
+<fieldset class="rating">
+	<ng-template ngFor [ngForOf]="counter(5)" let-i="index">
+    	<input type="radio" [class.active]="((5-i)==getRating())" name="rating" />
+    	<label class="full"><i class="material-icons">star</i></label>
+	</ng-template>
+</fieldset>
+{{rating}} <small>{{votes}} votes</small>

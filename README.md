@@ -1,28 +1,35 @@
-# MovieViewer
+# Movie Viewer
+[DEMO HERE!!!](http://www.matteoterrinoni.it/movie-viewer)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+This is just a simple test using Angular 4 with Redux
 
-## Development server
+ - [redux](https://github.com/reactjs/redux) Predictable state container for Javascript.
+ - [@angular-redux/store](https://github.com/angular-redux/store) Redux + Angular bindings
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with Angular CLI
 
-## Code scaffolding
+# Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Both the CLI and generated project have dependencies that require Node 6.9.0 or higher, together with NPM 3 or higher.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# Getting Started
 
-## Running unit tests
+install [@angular/cli](https://github.com/angular/angular-cli) via npm
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+$ npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+Replace ```YOUR_THEMOVIEDB_API_KEY'``` into ```src/environments/``` folder with you themoviedb.com api key
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Generating and serving an Angular project via a development server
+```sh
+ng serve
+```
 
-## Further help
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Running unit tests
+
+Run ```ng test``` to execute the unit tests via Karma.

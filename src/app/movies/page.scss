@@ -1,0 +1,131 @@
+@import '../../variables';
+$height: 50px;
+
+@import '../utils';
+
+:host /deep/{
+	.side-navigation {
+		background: $gray-900;
+		padding: 0;
+		height: calc(100vh - #{$navbarHeight});
+
+		virtual-scroll,
+		ul,{
+			height: calc(100vh - #{$navbarHeight});
+			position: fixed;
+			width: 25%;
+			flex-wrap: initial;
+			overflow-y: scroll;
+			z-index: 2;
+	
+			&::-webkit-scrollbar {
+				width: 7px;
+				height: 7px;
+			}
+			&::-webkit-scrollbar-button {
+				width: 0px;
+				height: 0px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: #505151;
+				border: 0px none #ffffff;
+				border-radius: 9px;
+			}
+			&::-webkit-scrollbar-thumb:hover {
+				background: #bdbfbd;
+			}
+			&::-webkit-scrollbar-thumb:active {
+				background: #a5a7a5;
+			}
+			&::-webkit-scrollbar-track {
+				background: #272727;
+				border: 0px none #ffffff;
+				border-radius: 0px;
+			}
+			&::-webkit-scrollbar-track:hover {
+				background: #272727;
+			}
+			&::-webkit-scrollbar-track:active {
+				background: #272727;
+			}
+			&::-webkit-scrollbar-corner {
+				background: transparent;
+			}
+		}
+
+		a {
+			display: flex;
+			min-height: $height;
+			align-items: center;
+			color: white;
+			border-bottom: 1px solid #343a40;
+			padding-left: 0px;
+			padding-right: 45px;
+			background: $gray-900;
+			overflow: hidden;
+			position: relative;
+			transition: background ease-in-ot .05s;
+			font-size: 10pt;
+			line-height: 14px;
+
+			&:after{
+				content:"";
+				display: block;
+				height: 20px;
+				width: 20px;
+				position: absolute;
+				right: -50px;
+				z-index: 1;
+				top: 15px;
+				border-radius: 10px;
+				background: #c1426a;
+				transform: translateX(0px);
+				transition: transform ease-in .1s .1s;
+			}
+
+			&:hover{
+				background: darken($gray-900, 1);
+				
+				img{
+					opacity: 0.9;
+				}
+			}
+
+			&.active{
+				background: lighten($gray-900, 5);
+
+				&:after{
+					transform: translateX(-60px);
+				}
+
+				img{
+					opacity: 1;
+				}
+			}
+
+			img{
+				height: $height;
+				width: auto;
+				margin-right: 15px;
+				opacity: 0.3;
+				transition: opacity ease-in-out .05s;
+				min-width: 33px;
+				background: #333;
+			}
+
+			small{
+				text-decoration: none;
+				position: absolute;
+				top: 0px;
+				right: 5px;
+				font-size: 7pt;
+				color: #6b6e71;
+			}
+		}
+	}
+
+	.movie-content{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

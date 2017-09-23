@@ -1,0 +1,37 @@
+<div *ngIf="Item$ | async">
+	<div
+		class="page-background" 
+		[style.background-image]="'url('+ItemApi.getBackground(Item$ | async)+')'">
+	</div>
+	<div class="content container-fluid">
+		<div class="row">
+			<div class="col poster">
+				<img class="rounded img-fluid" [src]="ItemApi.getPoster(Item$ | async)"/>
+			</div>
+			<div class="col-8 info">
+				<h1>{{(Item$ | async)?.name}}</h1>
+				<p>{{(Item$ | async)?.overview}}</p>
+				<div class="text-right">
+					<rating
+						[rating]="(Item$ | async)?.vote_average"
+						[votes]="(Item$ | async)?.vote_count">
+					</rating>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="!(Item$ | async)" class="empty">
+	<div
+		class="page-background"
+		[style.background-image]="'url('+baseImagePath+')'">
+	</div>
+	<div class="content container-fluid">
+		<div class="row justify-content-start">
+			<div class="col-6 align-self-start info">
+				<h1>Select a movie from the list</h1>
+				<p>Simple test for Angular 4 and redux</p>
+			</div>
+		</div>
+	</div>
+</div>

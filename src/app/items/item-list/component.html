@@ -1,0 +1,16 @@
+
+<div *ngIf="getArray(items | async).length > 0">
+	<virtual-scroll
+		[items]="itemsArray" (update)="scrollItems = $event"
+		(change)="onListChange($event)">
+		<a *ngFor="let item of scrollItems" routerLink="/movies/{{item.id}}"
+				routerLinkActive="active">
+				<img src="{{ItemApi.getThumbnail(item)}}" class="float-left" alt="{{item.name}}" />
+				{{item.name}} <small>{{item.popularity}}</small>
+		</a>
+		<spinner *ngIf="loading | async"></spinner>
+	</virtual-scroll>
+</div>
+
+<error-well *ngIf="error | async">
+</error-well>

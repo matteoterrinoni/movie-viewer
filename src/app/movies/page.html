@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col side-navigation">
+			<item-list
+				itemsName="Movies"
+				itemType="movie"
+				[items]="items$"
+				[page]="page$"
+				[pages_count]="pages_count$"
+				[loading]="loading$"
+				[error]="error$">
+			</item-list>
+		</div>
+		<div class="col-9 movie-content">
+				<item
+					itemType="movie"
+					[itemKey]="movieId$"
+					[loading]="loading$"
+					[error]="error$">
+				</item>
+		</div>
+	</div>
+</div>
