@@ -1,7 +1,7 @@
 # Movie Viewer
 [DEMO HERE!!!](http://www.matteoterrinoni.it/movie-viewer)
 
-![](github.com/matteoterrinoni/movie-viewer/blob/master/sample.gif?raw=true)
+![](http://github.com/matteoterrinoni/movie-viewer/blob/master/sample.gif?raw=true)
 
 This is just a simple test using Angular 4 with Redux
 
